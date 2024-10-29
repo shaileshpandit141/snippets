@@ -1,0 +1,91 @@
+{
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2"
+  },
+  "project_panel": {
+    "dock": "right"
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Summercamp"
+  },
+  "auto_update": true,
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": true
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1500
+    }
+  },
+  "base_keymap": "VSCode",
+  "editor": {
+    "completion": {
+      "path": true
+    },
+    "hover_popover_enabled": true,
+    "auto_closing_pairs": true,
+    "auto_closing_matching_pairs": true,
+    "auto_closing_html_tags": true,
+    "auto_rename_html_tags": true,
+    "tab_size": 2
+  },
+  "files": {
+    "exclude": [
+      "**/__pycache__/**",
+      "**/node_modules/**",
+      "**/.git/**",
+      "**/migrations/**",
+      "**/dist/**",
+      "**/.next/**"
+    ],
+    "watcherExclude": [
+      "**/__pycache__/**",
+      "**/node_modules/**",
+      "**/.git/**",
+      "**/migrations/**"
+    ]
+  },
+  "formatter": "language_server",
+  "format_on_save": "on",
+  "format_on_paste": true,
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy"
+        }
+      }
+    },
+    "typescript-language-server": {
+      "initialization_options": {
+        "format": {
+          "enable": true
+        }
+      }
+    }
+  },
+  "terminal": {
+    "shell": {
+      "program": "/bin/bash"
+    },
+    "working_directory": "current_project_directory",
+    "font_size": 16,
+    "blinking": "off"
+  },
+  "vim": {
+    "use_system_clipboard": "always",
+    "normal_mode": {
+      "j": "down",
+      "k": "up"
+    }
+  }
+}
