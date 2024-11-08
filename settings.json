@@ -1,3 +1,11 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
 {
   "assistant": {
     "default_model": {
@@ -58,6 +66,28 @@
   "format_on_save": "on",
   "format_on_paste": true,
   "lsp": {
+    "pyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "workspace",
+          // "typeCheckingMode": "strict"
+        },
+        "python": {
+          "pythonPath": "venv/bin/python3"
+        }
+      }
+    },
+    "eslint": {
+      "settings": {
+        "rulesCustomizations": [
+          // set all eslint errors/warnings to show as warnings
+          {
+            "rule": "*",
+            "severity": "warn"
+          }
+        ]
+      }
+    },
     "rust-analyzer": {
       "initialization_options": {
         "check": {

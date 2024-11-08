@@ -1,0 +1,16 @@
+{
+  "Auto incrementing integer number": {
+    "prefix": "autofield",
+    "body": [
+      "AutoField(primary_key=${1:True}, unique=${2:True})$0"
+    ],
+    "description": "Auto incrementing integer number field (used for primary keys)"
+  },
+  "Auto incrementing 64-bit integer number": {
+    "prefix": "bigautofield",
+    "body": [
+      "BigAutoField(primary_key=${1:True}, unique=${2:True})$0"
+    ],
+    "description": "Auto incrementing 64-bit integer nuber field (used for primary keys)"
+  }
+}
