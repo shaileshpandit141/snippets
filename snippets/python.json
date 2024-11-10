@@ -1,16 +1,374 @@
 {
-  "Auto incrementing integer number": {
+  "AutoField": {
     "prefix": "autofield",
     "body": [
-      "AutoField(primary_key=${1:True}, unique=${2:True})$0"
+      "AutoField(primary_key=${1:True}, unique=${2:False})$0"
     ],
-    "description": "Auto incrementing integer number field (used for primary keys)"
+    "description": "Auto incrementing integer field for primary keys"
   },
-  "Auto incrementing 64-bit integer number": {
+  "BigAutoField": {
     "prefix": "bigautofield",
     "body": [
-      "BigAutoField(primary_key=${1:True}, unique=${2:True})$0"
+      "BigAutoField(primary_key=${1:True}, unique=${2:False})$0"
     ],
-    "description": "Auto incrementing 64-bit integer nuber field (used for primary keys)"
+    "description": "Auto incrementing 64-bit integer field for primary keys"
+  },
+  "BigIntegerField": {
+    "prefix": "bigintegerfield",
+    "body": [
+      "BigIntegerField(unique=${1:False}, null=${2:True}, blank=${3:True})$0"
+    ],
+    "description": "Large integer field"
+  },
+  "BinaryField": {
+    "prefix": "binaryfield",
+    "body": [
+      "BinaryField(max_length=${1:None}, null=${2:True}, blank=${3:True})$0"
+    ],
+    "description": "Binary field"
+  },
+  "BooleanField": {
+    "prefix": "booleanfield",
+    "body": [
+      "BooleanField(default=${1:False})$0"
+    ],
+    "description": "Boolean field"
+  },
+  "CharField": {
+    "prefix": "charfield",
+    "body": [
+      "CharField(max_length=${1:255}, unique=${2:False}, null=${3:False}, blank=${4:False})$0"
+    ],
+    "description": "Character field"
+  },
+  "DateField": {
+    "prefix": "datefield",
+    "body": [
+      "DateField(auto_now=${1:False}, auto_now_add=${2:False}, null=${3:True}, blank=${4:True})$0"
+    ],
+    "description": "Date field"
+  },
+  "DateTimeField": {
+    "prefix": "datetimefield",
+    "body": [
+      "DateTimeField(auto_now=${1:False}, auto_now_add=${2:False}, null=${3:True}, blank=${4:True})$0"
+    ],
+    "description": "Date and time field"
+  },
+  "DecimalField": {
+    "prefix": "decimalfield",
+    "body": [
+      "DecimalField(max_digits=${1:10}, decimal_places=${2:2}, null=${3:True}, blank=${4:True})$0"
+    ],
+    "description": "Decimal field with precision"
+  },
+  "DurationField": {
+    "prefix": "durationfield",
+    "body": [
+      "DurationField(null=${1:True}, blank=${2:True})$0"
+    ],
+    "description": "Field for storing durations"
+  },
+  "EmailField": {
+    "prefix": "emailfield",
+    "body": [
+      "EmailField(max_length=${1:254}, unique=${2:True}, null=${3:False}, blank=${4:False})$0"
+    ],
+    "description": "Email field"
+  },
+  "FileField": {
+    "prefix": "filefield",
+    "body": [
+      "FileField(upload_to=${1:'uploads/'}, max_length=${2:100}, null=${3:True}, blank=${4:True})$0"
+    ],
+    "description": "File field"
+  },
+  "FilePathField": {
+    "prefix": "filepathfield",
+    "body": [
+      "FilePathField(path=${1:'/path/to/files'}, match=${2:None}, recursive=${3:False}, allow_files=${4:True}, allow_folders=${5:False}, max_length=${6:100}, blank=${7:True}, null=${8:True})$0"
+    ],
+    "description": "File path field"
+  },
+  "FloatField": {
+    "prefix": "floatfield",
+    "body": [
+      "FloatField(null=${1:True}, blank=${2:True})$0"
+    ],
+    "description": "Float field"
+  },
+  "ImageField": {
+    "prefix": "imagefield",
+    "body": [
+      "ImageField(upload_to=${1:'images/'}, height_field=${2:None}, width_field=${3:None}, max_length=${4:100}, null=${5:True}, blank=${6:True})$0"
+    ],
+    "description": "Image field with optional height and width fields"
+  },
+  "IntegerField": {
+    "prefix": "integerfield",
+    "body": [
+      "IntegerField(unique=${1:False}, null=${2:True}, blank=${3:True})$0"
+    ],
+    "description": "Integer field"
+  },
+  "GenericIPAddressField": {
+    "prefix": "genericipaddressfield",
+    "body": [
+      "GenericIPAddressField(protocol=${1:'both'}, unpack_ipv4=${2:False}, null=${3:True}, blank=${4:True})$0"
+    ],
+    "description": "IP address field"
+  },
+  "JSONField": {
+    "prefix": "jsonfield",
+    "body": [
+      "JSONField(encoder=${1:None}, decoder=${2:None}, null=${3:True}, blank=${4:True})$0"
+    ],
+    "description": "JSON field"
+  },
+  "PositiveIntegerField": {
+    "prefix": "positiveintegerfield",
+    "body": [
+      "PositiveIntegerField(unique=${1:False}, null=${2:True}, blank=${3:True})$0"
+    ],
+    "description": "Positive integer field"
+  },
+  "PositiveSmallIntegerField": {
+    "prefix": "positivesmallintegerfield",
+    "body": [
+      "PositiveSmallIntegerField(unique=${1:False}, null=${2:True}, blank=${3:True})$0"
+    ],
+    "description": "Positive small integer field"
+  },
+  "SlugField": {
+    "prefix": "slugfield",
+    "body": [
+      "SlugField(max_length=${1:50}, unique=${2:False}, null=${3:True}, blank=${4:True})$0"
+    ],
+    "description": "Slug field"
+  },
+  "SmallIntegerField": {
+    "prefix": "smallintegerfield",
+    "body": [
+      "SmallIntegerField(unique=${1:False}, null=${2:True}, blank=${3:True})$0"
+    ],
+    "description": "Small integer field"
+  },
+  "TextField": {
+    "prefix": "textfield",
+    "body": [
+      "TextField(null=${1:True}, blank=${2:True})$0"
+    ],
+    "description": "Text field"
+  },
+  "TimeField": {
+    "prefix": "timefield",
+    "body": [
+      "TimeField(auto_now=${1:False}, auto_now_add=${2:False}, null=${3:True}, blank=${4:True})$0"
+    ],
+    "description": "Time field"
+  },
+  "URLField": {
+    "prefix": "urlfield",
+    "body": [
+      "URLField(max_length=${1:200}, null=${2:True}, blank=${3:True})$0"
+    ],
+    "description": "URL field"
+  },
+  "UUIDField": {
+    "prefix": "uuidfield",
+    "body": [
+      "UUIDField(primary_key=${1:False}, default=${2:None}, editable=${3:True}, unique=${4:False})$0"
+    ],
+    "description": "UUID field"
+  },
+  "ForeignKey": {
+    "prefix": "foreignkey",
+    "body": [
+      "ForeignKey(${1:Model}, on_delete=${2:models.CASCADE}, related_name=${3:None}, null=${4:True}, blank=${5:True})$0"
+    ],
+    "description": "Foreign key to another model"
+  },
+  "OneToOneField": {
+    "prefix": "onetoonefield",
+    "body": [
+      "OneToOneField(${1:Model}, on_delete=${2:models.CASCADE}, primary_key=${3:False}, null=${4:True}, blank=${5:True})$0"
+    ],
+    "description": "One-to-one relationship with another model"
+  },
+  "ManyToManyField": {
+    "prefix": "manytomanyfield",
+    "body": [
+      "ManyToManyField(${1:Model}, related_name=${2:None}, blank=${3:True})$0"
+    ],
+    "description": "Many-to-many relationship with another model"
+  },
+  "Django Model Template with imports": {
+    "prefix": "djmi",
+    "body": [
+      "from django.db import models",
+      "from django.contrib.auth import get_user_model",
+      "",
+      "User = get_user_model()",
+      "",
+      "# Create your models here.",
+      "class ${1:ModelName}(models.Model):",
+      "    '''",
+      "    ${2:Type your model documentation here.}",
+      "    '''",
+      "    ${3:field_name} = models.${4:CharField}(max_length=${5:255}, unique=${6:False}, null=${7:True}, blank=${8:True})",
+      "    ",
+      "    class Meta:",
+      "        db_table = '${1:ModelName}'",
+      "        ordering = ['-${3:field_name}']",
+      "        verbose_name = '${1:ModelName}'",
+      "        verbose_name_plural = '${1:ModelNames}'",
+      "        unique_together = (('${9:field_1}', '${10:field_2}'),)",
+      "        constraints = [",
+      "            # models.UniqueConstraint(fields=['${9:field_1}', '${10:field_2}'], name='unique_${1:ModelName}_fields')",
+      "        ]",
+      "",
+      "    def __str__(self):",
+      "        return f'${1:ModelName} object ({self.${3:field_name}})'",
+      ""
+    ],
+    "description": "Template for creating a Django model with Meta options and __str__ method"
+  },
+  "Django Model with without import": {
+    "prefix": "djm",
+    "body": [
+      "class ${1:ModelName}(models.Model):",
+      "    '''",
+      "    ${2:Type your model documentation here.}",
+      "    '''",
+      "    ${3:field_name} = models.CharField(max_length=${4:255}, unique=${5:False}, null=${6:True}, blank=${7:True})",
+      "    ",
+      "    class Meta:",
+      "        db_table = '${1:ModelName}'",
+      "        ordering = ['-${3:field_name}']",
+      "        verbose_name = '${1:ModelName}'",
+      "        verbose_name_plural = '${1:ModelNames}'",
+      "        unique_together = (('${8:field_1}', '${9:field_2}'),)",
+      "        constraints = [",
+      "            # models.UniqueConstraint(fields=['${8:field_1}', '${9:field_2}'], name='unique_${1:ModelName}_fields')",
+      "        ]",
+      "",
+      "    def __str__(self):",
+      "        return f'${1:ModelName} object ({self.${3:field_name}})'",
+      ""
+    ],
+    "description": "Django model with Meta options and __str__ method"
+  },
+  "Django REST Framework Model Serializer with imports": {
+    "prefix": "drfsi",
+    "body": [
+      "from rest_framework import serializers",
+      "from .models import ${1:ModelName}",
+      "",
+      "class ${1:ModelName}Serializer(serializers.ModelSerializer):",
+      "    # Define fields and any additional methods here.",
+      "    ${2:custom_field} = serializers.SerializerMethodField()",
+      "",
+      "    class Meta:",
+      "        model = ${1:ModelName}",
+      "        fields = ['id', '${2:custom_field}']",
+      "        exclude = []",
+      "        read_only_fields = ['id']",
+      "        extra_kwargs = {",
+      "            'id': {",
+      "                'read_only': True",
+      "            }",
+      "        }",
+      "",
+      "    # Method to fetch a custom field (get_<${2:custom_field}>).",
+      "    def get_${2:custom_field}(self, obj):",
+      "        return obj.${3:id}",
+      "",
+      "    # Validation for a specific field (validate_<field>).",
+      "    def validate_id(self, value):",
+      "        if value >= 0:",
+      "            return value",
+      "        else:",
+      "            raise serializers.ValidationError('Invalid `id`')",
+      "",
+      "    # Validation for multiple fields together (data: dict).",
+      "    def validate(self, data):",
+      "        return data",
+      "",
+      "    # Override the create method.",
+      "    def create(self, validated_data):",
+      "        # Handle the creation of bulk records.",
+      "        if isinstance(validated_data, list):",
+      "            bulk_data = [${1:ModelName}(**data) for data in validated_data]",
+      "            return ${1:ModelName}.objects.bulk_create(bulk_data)",
+      "        # Handle the creation of a single record.",
+      "        return ${1:ModelName}.objects.create(**validated_data)",
+      "",
+      "    # Override the update method.",
+      "    def update(self, instance, validated_data):",
+      "        # Custom logic before updating, if needed.",
+      "        for attr, value in validated_data.items():",
+      "            setattr(instance, attr, value)",
+      "",
+      "        # Save once, after all fields are updated.",
+      "        instance.save()",
+      "        return instance",
+      ""
+    ],
+    "description": "Django REST Framework model serializer with custom field, validation, and create/update methods"
+  },
+  "Django REST Framework Model Serializer without imports": {
+    "prefix": "drfs",
+    "body": [
+      "class ${1:ModelName}Serializer(serializers.ModelSerializer):",
+      "    # Define fields and any additional methods here.",
+      "    ${2:custom_field} = serializers.SerializerMethodField()",
+      "",
+      "    class Meta:",
+      "        model = ${1:ModelName}",
+      "        fields = ['id', '${2:custom_field}']",
+      "        exclude = []",
+      "        read_only_fields = ['id']",
+      "        extra_kwargs = {",
+      "            'id': {",
+      "                'read_only': True",
+      "            }",
+      "        }",
+      "",
+      "    # Method to fetch a custom field (get_<${2:custom_field}>).",
+      "    def get_${2:custom_field}(self, obj):",
+      "        return obj.${3:id}",
+      "",
+      "    # Validation for a specific field (validate_<field>).",
+      "    def validate_id(self, value):",
+      "        if value >= 0:",
+      "            return value",
+      "        else:",
+      "            raise serializers.ValidationError('Invalid `id`')",
+      "",
+      "    # Validation for multiple fields together (data: dict).",
+      "    def validate(self, data):",
+      "        return data",
+      "",
+      "    # Override the create method.",
+      "    def create(self, validated_data):",
+      "        # Handle the creation of bulk records.",
+      "        if isinstance(validated_data, list):",
+      "            bulk_data = [${1:ModelName}(**data) for data in validated_data]",
+      "            return ${1:ModelName}.objects.bulk_create(bulk_data)",
+      "        # Handle the creation of a single record.",
+      "        return ${1:ModelName}.objects.create(**validated_data)",
+      "",
+      "    # Override the update method.",
+      "    def update(self, instance, validated_data):",
+      "        # Custom logic before updating, if needed.",
+      "        for attr, value in validated_data.items():",
+      "            setattr(instance, attr, value)",
+      "",
+      "        # Save once, after all fields are updated.",
+      "        instance.save()",
+      "        return instance",
+      ""
+    ],
+    "description": "Django REST Framework model serializer with custom field, validation, and create/update methods"
   }
 }
