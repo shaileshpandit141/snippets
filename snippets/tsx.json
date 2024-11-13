@@ -1,0 +1,19 @@
+{
+  "Default tsx component for React": {
+    "prefix": "rfce",
+    "body": [
+      "import React from 'react'",
+      "import './${0:ComponentName}.css'",
+      "",
+      "const ${0:ComponentName}: React.FC = (props) => {",
+      "  return (",
+      "    <div>${0:ComponentName}</div>",
+      "  )",
+      "}",
+      "",
+      "export default ${0:ComponentName}",
+      ""
+    ],
+    "description": "Creates a default tsx component for React"
+  }
+}

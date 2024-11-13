@@ -31,12 +31,14 @@
     "prefix": "rfc",
     "body": [
       "import React from 'react'",
+      "import './${0:ComponentName}.css'",
       "",
-      "export default function ${1:ComponentName}(props) {",
+      "export default function ${0:ComponentName}(props) {",
       "  return (",
       "    <div>${0:ComponentName}</div>",
       "  )",
-      "}"
+      "}",
+      ""
     ],
     "description": "Creates a default JSX component for React"
   }
