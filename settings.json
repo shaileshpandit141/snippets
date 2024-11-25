@@ -1,12 +1,13 @@
-// Zed settings
+// Zed Editor Configuration
 //
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
+// This configuration file controls various aspects of the Zed editor.
+// For detailed documentation, visit: https://zed.dev/docs/configuring-zed
 //
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
+// To view default settings without modifying your custom config:
+// 1. Open command palette (cmd-shift-p / ctrl-shift-p)
+// 2. Run `zed: open default settings`
 {
+  // AI assistant configuration
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
@@ -14,26 +15,29 @@
     },
     "version": "2"
   },
+  // UI Layout settings
   "project_panel": {
     "dock": "right"
   },
   "ui_font_size": 16,
   "buffer_font_size": 16,
   "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Summercamp"
+    "mode": "system", // Follows system theme
+    "light": "One Light", // Theme for light mode
+    "dark": "Summercamp" // Theme for dark mode
   },
+  // Application behavior
   "auto_update": true,
   "telemetry": {
-    "diagnostics": true,
-    "metrics": true
+    "diagnostics": true, // Send diagnostic data
+    "metrics": true // Send usage metrics
   },
   "autosave": {
     "after_delay": {
       "milliseconds": 1500
     }
   },
+  // Editor configuration
   "base_keymap": "VSCode",
   "editor": {
     "completion": {
@@ -44,8 +48,13 @@
     "auto_closing_matching_pairs": true,
     "auto_closing_html_tags": true,
     "auto_rename_html_tags": true,
-    "tab_size": 2
+    "tab_size": 2,
+    "jsx_close_tag": true,
+    "suggest": {
+      "snippetsPreventQuickSuggestions": false
+    }
   },
+  // File handling and exclusions
   "files": {
     "exclude": [
       "**/__pycache__/**",
@@ -53,56 +62,100 @@
       "**/.git/**",
       "**/migrations/**",
       "**/dist/**",
-      "**/.next/**"
+      "**/.next/**",
+      "**/.mypy_cache/**",
+      "**/.pytest_cache/**",
+      "**/media/**",
+      "**/static/**",
+      "**/*.pyc"
     ],
     "watcherExclude": [
       "**/__pycache__/**",
       "**/node_modules/**",
       "**/.git/**",
-      "**/migrations/**"
-    ]
+      "**/migrations/**",
+      "**/.mypy_cache/**",
+      "**/.pytest_cache/**"
+    ],
+    "associations": {
+      "*.tsx": "typescriptreact",
+      "*.jsx": "javascriptreact",
+      "*.py": "python"
+    }
   },
+  // Code formatting settings
   "formatter": "language_server",
   "format_on_save": "on",
   "format_on_paste": true,
+  // Language Server Protocol configurations
   "lsp": {
     "pyright": {
+      "enable": true,
       "settings": {
         "python.analysis": {
           "diagnosticMode": "workspace",
-          // "typeCheckingMode": "strict"
+          "typeCheckingMode": "basic",
+          "useLibraryCodeForTypes": true,
+          "autoImportCompletions": true
         },
         "python": {
-          "pythonPath": "venv/bin/python3"
+          "pythonPath": "./backend/venv/bin/python",
+          "venvPath": "./backend/venv"
         }
       }
     },
+    // Django LSP settings
+    // "pylsp": {
+    //   "enable": true,
+    //   "settings": {
+    //     "pylsp.plugins.pylint.enabled": true,
+    //     "pylsp.plugins.pycodestyle.enabled": true,
+    //     "pylsp.plugins.flake8.enabled": true,
+    //     "pylsp.plugins.django": true
+    //   }
+    // },
+    // Mypy configuration
+    // "mypy": {
+    //   "enable": false,
+    //   "settings": {
+    //     "python.linting.mypyEnabled": true,
+    //     "python.linting.mypyPath": "./backend/venv/bin/mypy",
+    //     "mypy.dmypy": true,
+    //     "mypy.strict": true
+    //   }
+    // },
+    // ESLint configuration
     "eslint": {
+      "enable": true,
       "settings": {
         "rulesCustomizations": [
-          // set all eslint errors/warnings to show as warnings
           {
             "rule": "*",
             "severity": "warn"
           }
-        ]
+        ],
+        "format.enable": true,
+        "workingDirectory": "./frontend"
       }
     },
-    "rust-analyzer": {
-      "initialization_options": {
-        "check": {
-          "command": "clippy"
-        }
-      }
-    },
+    // TypeScript/React configuration
     "typescript-language-server": {
+      "enable": true,
       "initialization_options": {
+        "preferences": {
+          "importModuleSpecifier": "relative",
+          "importModuleSpecifierEnding": "minimal"
+        },
+        "suggestions": {
+          "completeFunctionCalls": true
+        },
         "format": {
           "enable": true
         }
       }
     }
   },
+  // Terminal settings
   "terminal": {
     "shell": {
       "program": "/bin/bash"
@@ -110,12 +163,5 @@
     "working_directory": "current_project_directory",
     "font_size": 16,
     "blinking": "off"
-  },
-  "vim": {
-    "use_system_clipboard": "always",
-    "normal_mode": {
-      "j": "down",
-      "k": "up"
-    }
   }
 }
