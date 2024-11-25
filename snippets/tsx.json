@@ -1,6 +1,6 @@
 {
   "Default tsx component for React": {
-    "prefix": "rfce",
+    "prefix": "snrfce",
     "body": [
       "import React from 'react'",
       "import './${0:ComponentName}.css'",
