@@ -1,34 +1,34 @@
 {
   "Log to the console": {
-    "prefix": "log",
+    "prefix": "snclg",
     "body": [
       "console.log($1)$0"
     ],
     "description": "Log to the console"
   },
   "Log warning to console": {
-    "prefix": "cwarn",
+    "prefix": "snwarn",
     "body": [
       "console.warn($1)$0"
     ],
     "description": "Log warning to the console"
   },
   "Log error to console": {
-    "prefix": "cerror",
+    "prefix": "snerror",
     "body": [
       "console.error($1)$0"
     ],
     "description": "Log error to the console"
   },
   "Throw Exception": {
-    "prefix": "tew",
+    "prefix": "sntew",
     "body": [
       "throw new Error(\"$1\")$0"
     ],
     "description": "Throw Exception"
   },
   "Default jsx component for React": {
-    "prefix": "rfc",
+    "prefix": "snrfc",
     "body": [
       "import React from 'react'",
       "import './${0:ComponentName}.css'",
