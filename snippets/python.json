@@ -2,58 +2,42 @@
   "AutoField": {
     "prefix": "snAutoField",
     "body": [
-      "models.AutoField = models.AutoField(",
-      "    primary_key=True,",
-      "    unique=False,",
-      ")$0"
+      "models.AutoField(primary_key=True, unique=False)$0"
     ],
     "description": "Auto incrementing integer field for primary keys"
   },
   "BigAutoField": {
     "prefix": "snBigAutoField",
     "body": [
-      "models.BigAutoField = models.BigAutoField(",
-      "    primary_key=True,",
-      "    unique=False,",
-      ")$0"
+      "models.BigAutoField(primary_key=True, unique=False)$0"
     ],
     "description": "Auto incrementing 64-bit integer field for primary keys"
   },
   "BigIntegerField": {
     "prefix": "snBigIntegerField",
     "body": [
-      "models.BigIntegerField = models.BigIntegerField(",
-      "    unique=False,",
-      "    null=True,",
-      "    blank=True,",
-      ")$0"
+      "models.BigIntegerField(unique=False, null=True, blank=True)$0"
     ],
     "description": "Large integer field"
   },
   "BinaryField": {
     "prefix": "snBinaryField",
     "body": [
-      "models.BinaryField = models.BinaryField(",
-      "    max_length=None,",
-      "    null=True,",
-      "    blank=True,",
-      ")$0"
+      "models.BinaryField(max_length=None, ull=True, blank=True)$0"
     ],
     "description": "Binary field"
   },
   "BooleanField": {
     "prefix": "snBooleanField",
     "body": [
-      "models.BooleanField = models.BooleanField(",
-      "    default=False,",
-      ")$0"
+      "models.BooleanField(default=False)$0"
     ],
     "description": "Boolean field"
   },
   "CharField": {
     "prefix": "snCharField",
     "body": [
-      "models.CharField = models.CharField(",
+      "models.CharField(",
       "    max_length=255,",
       "    unique=False,",
       "    null=False,",
@@ -65,7 +49,7 @@
   "DateField": {
     "prefix": "snDateField",
     "body": [
-      "models.DateField = models.DateField(",
+      "models.DateField(",
       "    auto_now=False,",
       "    auto_now_add=False,",
       "    null=True,",
@@ -77,7 +61,7 @@
   "DateTimeField": {
     "prefix": "snDateTimeField",
     "body": [
-      "models.DateTimeField = models.DateTimeField(",
+      "models.DateTimeField(",
       "    auto_now=False,",
       "    auto_now_add=False,",
       "    null=True,",
@@ -89,7 +73,7 @@
   "DecimalField": {
     "prefix": "snDecimalField",
     "body": [
-      "models.DecimalField = models.DecimalField(",
+      "models.DecimalField(",
       "    max_digits=10,",
       "    decimal_places=2,",
       "    null=True,",
@@ -101,17 +85,14 @@
   "DurationField": {
     "prefix": "snDurationField",
     "body": [
-      "models.DurationField = models.DurationField(",
-      "    null=True,",
-      "    blank=True,",
-      ")$0"
+      "models.DurationField(null=True, blank=True)$0"
     ],
     "description": "Field for storing durations"
   },
   "EmailField": {
     "prefix": "snEmailField",
     "body": [
-      "models.EmailField = models.EmailField(",
+      "models.EmailField(",
       "    max_length=254,",
       "    unique=True,",
       "    null=False,",
@@ -123,7 +104,7 @@
   "FileField": {
     "prefix": "snFileField",
     "body": [
-      "models.FileField = models.FileField(",
+      "models.FileField(",
       "    upload_to='uploads/',",
       "    max_length=100,",
       "    null=True,",
@@ -135,7 +116,7 @@
   "FilePathField": {
     "prefix": "snFilePathField",
     "body": [
-      "models.FilePathField = models.FilePathField(",
+      "models.FilePathField(",
       "    path='/path/to/files',",
       "    match=None,",
       "    recursive=False,",
@@ -151,17 +132,14 @@
   "FloatField": {
     "prefix": "snFloatField",
     "body": [
-      "models.FloatField = models.FloatField(",
-      "    null=True,",
-      "    blank=True,",
-      ")$0"
+      "models.FloatField(null=True, blank=True)$0"
     ],
     "description": "Float field"
   },
   "ImageField": {
     "prefix": "snImageField",
     "body": [
-      "models.ImageField = models.ImageField(",
+      "models.ImageField(",
       "    upload_to='images/',",
       "    height_field=None,",
       "    width_field=None,",
@@ -175,18 +153,14 @@
   "IntegerField": {
     "prefix": "snIntegerField",
     "body": [
-      "models.IntegerField = models.IntegerField(",
-      "    unique=False,",
-      "    null=True,",
-      "    blank=True,",
-      ")$0"
+      "models.IntegerField(unique=False, null=True, blank=True)$0"
     ],
     "description": "Integer field"
   },
   "GenericIPAddressField": {
     "prefix": "snGenericIPAddressField",
     "body": [
-      "models.GenericIPAddressField = models.GenericIPAddressField(",
+      "models.GenericIPAddressField(",
       "    protocol='both',",
       "    unpack_ipv4=False,",
       "    null=True,",
@@ -198,7 +172,7 @@
   "JSONField": {
     "prefix": "snJSONField",
     "body": [
-      "models.JSONField = models.JSONField(",
+      "models.JSONField(",
       "    encoder=None,",
       "    decoder=None,",
       "    null=True,",
@@ -210,29 +184,21 @@
   "PositiveIntegerField": {
     "prefix": "snPositiveIntegerField",
     "body": [
-      "models.PositiveIntegerField = models.PositiveIntegerField(",
-      "    unique=False,",
-      "    null=True,",
-      "    blank=True,",
-      ")$0"
+      "models.PositiveIntegerField(unique=False, null=True, blank=True,)$0"
     ],
     "description": "Positive integer field"
   },
   "PositiveSmallIntegerField": {
     "prefix": "snPositiveSmallIntegerField",
     "body": [
-      "models.PositiveSmallIntegerField = models.PositiveSmallIntegerField(",
-      "    unique=False,",
-      "    null=True,",
-      "    blank=True,",
-      ")$0"
+      "models.PositiveSmallIntegerField(unique=False, null=True, blank=True)$0"
     ],
     "description": "Positive small integer field"
   },
   "SlugField": {
     "prefix": "snSlugField",
     "body": [
-      "models.SlugField = models.SlugField(",
+      "models.SlugField(",
       "    max_length=50,",
       "    unique=False,",
       "    null=True,",
@@ -244,28 +210,21 @@
   "SmallIntegerField": {
     "prefix": "snSmallIntegerField",
     "body": [
-      "models.SmallIntegerField = models.SmallIntegerField(",
-      "    unique=False,",
-      "    null=True,",
-      "    blank=True,",
-      ")$0"
+      "models.SmallIntegerField(unique=False, null=True, blank=True)$0"
     ],
     "description": "Small integer field"
   },
   "TextField": {
     "prefix": "snTextField",
     "body": [
-      "models.TextField = models.TextField(",
-      "    null=True,",
-      "    blank=True,",
-      ")$0"
+      "models.TextField(null=True, blank=True)$0"
     ],
     "description": "Text field"
   },
   "TimeField": {
     "prefix": "snTimeField",
     "body": [
-      "time_field: models.TimeField = models.TimeField(",
+      "models.TimeField(",
       "    auto_now=False,",
       "    auto_now_add=False,",
       "    null=True,",
@@ -277,18 +236,14 @@
   "URLField": {
     "prefix": "snURLField",
     "body": [
-      "models.URLField = models.URLField(",
-      "    max_length=200,",
-      "    null=True,",
-      "    blank=True,",
-      ")$0"
+      "models.URLField(max_length=200, null=True, blank=True)$0"
     ],
     "description": "URL field"
   },
   "UUIDField": {
     "prefix": "snUUIDField",
     "body": [
-      "models.UUIDField = models.UUIDField(",
+      "mmodels.UUIDField(",
       "    primary_key=False,",
       "    default=None,",
       "    editable=True,",
@@ -300,10 +255,11 @@
   "ForeignKey": {
     "prefix": "snForeignKey",
     "body": [
-      "models.ForeignKey = models.ForeignKey(",
+      "models.ForeignKey(",
       "    User,",
       "    on_delete=models.CASCADE,",
-      "    related_name='directories',",
+      "    primary_key=False,",
+      "    related_name='+',",
       "    null=False,",
       "    blank=False,",
       ")$0"
@@ -313,23 +269,27 @@
   "OneToOneField": {
     "prefix": "snOneToOneField",
     "body": [
-      "models.OneToOneField = models.OneToOneField(",
+      "models.OneToOneField(",
       "    User,",
       "    on_delete=models.CASCADE,",
       "    primary_key=False,",
-      "    null=True,",
-      "    blank=True,",
+      "    related_name='+',",
+      "    null=False,",
+      "    blank=False,",
       ")$0"
     ],
     "description": "One-to-one relationship with another model"
   },
   "ManyToManyField": {
-    "prefix": "sn",
+    "prefix": "snManyToManyField",
     "body": [
-      "models.ManyToManyField = models.ManyToManyField(",
+      "models.ManyToManyField(",
       "    User,",
-      "    related_name='friends',",
-      "    blank=True,",
+      "    on_delete=models.CASCADE,",
+      "    primary_key=False,",
+      "    related_name='+',",
+      "    null=False,",
+      "    blank=False,",
       ")$0"
     ],
     "description": "Many-to-many relationship with another model"
@@ -428,7 +388,11 @@
       "            'id': {",
       "                'read_only': True",
       "            }",
-      "        }"
+      "        }",
+      "",
+      "    def get_${2:custom_field}(self, obj):",
+      "        return obj.id",
+      ""
     ],
     "description": "Base Django REST Framework model serializer with Meta class with imports"
   },
@@ -448,7 +412,11 @@
       "            'id': {",
       "                'read_only': True",
       "            }",
-      "        }"
+      "        }",
+      "",
+      "    def get_${2:custom_field}(self, obj):",
+      "        return obj.id",
+      ""
     ],
     "description": "Base Django REST Framework model serializer with Meta class without imports"
   },
