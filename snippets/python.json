@@ -484,7 +484,7 @@
       "from rest_framework.views import APIView",
       "",
       "# Local imports",
-      "from .response import Response",
+      "from utils.response import Response",
       "from .models import ${1:YourModel}",
       "from .serializers import ${2:YourModelSerializer}",
       "",
