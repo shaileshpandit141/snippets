@@ -39,54 +39,29 @@
   },
   // Editor configuration
   "base_keymap": "VSCode",
-  "editor": {
-    "completion": {
-      "path": true
-    },
-    "hover_popover_enabled": true,
-    "auto_closing_pairs": true,
-    "auto_closing_matching_pairs": true,
-    "auto_closing_html_tags": true,
-    "auto_rename_html_tags": true,
-    "tab_size": 2,
-    "jsx_close_tag": true,
-    "suggest": {
-      "snippetsPreventQuickSuggestions": false
-    }
+  // Indent guides configuration
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
   },
   // File handling and exclusions
-  "files": {
-    "exclude": [
-      "**/__pycache__/**",
-      "**/node_modules/**",
-      "**/.git/**",
-      "**/migrations/**",
-      "**/dist/**",
-      "**/.next/**",
-      "**/.mypy_cache/**",
-      "**/.pytest_cache/**",
-      "**/media/**",
-      "**/static/**",
-      "**/*.pyc"
-    ],
-    "watcherExclude": [
-      "**/__pycache__/**",
-      "**/node_modules/**",
-      "**/.git/**",
-      "**/migrations/**",
-      "**/.mypy_cache/**",
-      "**/.pytest_cache/**"
-    ],
-    "associations": {
-      "*.tsx": "typescriptreact",
-      "*.jsx": "javascriptreact",
-      "*.py": "python"
-    }
-  },
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/.jj",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**"
+  ],
   // Code formatting settings
   "formatter": "language_server",
   "format_on_save": "on",
-  "format_on_paste": true,
   // Language Server Protocol configurations
   "lsp": {
     "pyright": {
@@ -94,37 +69,19 @@
       "settings": {
         "python.analysis": {
           "diagnosticMode": "workspace",
+          // "typeCheckingMode": "strict",
           "typeCheckingMode": "basic",
           "useLibraryCodeForTypes": true,
-          "autoImportCompletions": true
+          "autoImportCompletions": true,
+          "reportMissingImports": true,
+          "reportMissingTypeStubs": true
         },
         "python": {
-          "pythonPath": "./backend/venv/bin/python",
-          "venvPath": "./backend/venv"
+          "pythonPath": "./venv/bin/python",
+          "venvPath": "./venv"
         }
       }
     },
-    // Django LSP settings
-    // "pylsp": {
-    //   "enable": true,
-    //   "settings": {
-    //     "pylsp.plugins.pylint.enabled": true,
-    //     "pylsp.plugins.pycodestyle.enabled": true,
-    //     "pylsp.plugins.flake8.enabled": true,
-    //     "pylsp.plugins.django": true
-    //   }
-    // },
-    // Mypy configuration
-    // "mypy": {
-    //   "enable": false,
-    //   "settings": {
-    //     "python.linting.mypyEnabled": true,
-    //     "python.linting.mypyPath": "./backend/venv/bin/mypy",
-    //     "mypy.dmypy": true,
-    //     "mypy.strict": true
-    //   }
-    // },
-    // ESLint configuration
     "eslint": {
       "enable": true,
       "settings": {
@@ -138,30 +95,61 @@
         "workingDirectory": "./frontend"
       }
     },
-    // TypeScript/React configuration
     "typescript-language-server": {
       "enable": true,
       "initialization_options": {
         "preferences": {
-          "importModuleSpecifier": "relative",
-          "importModuleSpecifierEnding": "minimal"
+          "importModuleSpecifier": "relative", 
+          "importModuleSpecifierEnding": "minimal",
+          "includeCompletionsForModuleExports": true,
+          "includeCompletionsWithSnippetText": true
         },
         "suggestions": {
-          "completeFunctionCalls": true
+          "completeFunctionCalls": true,
+          "includeAutomaticOptionalChainCompletions": true
         },
         "format": {
           "enable": true
         }
       }
+    },
+    "prettier": {
+      "enable": true,
+      "settings": {
+        "singleQuote": true,
+        "semi": true,
+        "trailingComma": "es5"
+      }
     }
   },
   // Terminal settings
   "terminal": {
-    "shell": {
-      "program": "/bin/bash"
+    "alternate_scroll": "off",
+    "blinking": "on",
+    "copy_on_select": false,
+    "dock": "bottom",
+    "detect_venv": {
+      "on": {
+        "directories": [
+          ".env",
+          "env",
+          ".venv",
+          "venv"
+        ],
+        "activate_script": "default"
+      }
     },
-    "working_directory": "current_project_directory",
+    "env": {},
     "font_size": 16,
-    "blinking": "off"
+    // "font_family": null,
+    "font_features": null,
+    "line_height": "comfortable",
+    "option_as_meta": false,
+    "button": false,
+    "shell": "system",
+    "toolbar": {
+      "breadcrumbs": true
+    },
+    "working_directory": "current_project_directory"
   }
 }
