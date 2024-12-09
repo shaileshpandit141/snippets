@@ -2,35 +2,86 @@
   "AutoField": {
     "prefix": "snAutoField",
     "body": [
-      "models.AutoField(primary_key=True, unique=False)$0"
+      "models.AutoField(",
+      "    primary_key=True,",
+      "    unique=False,",
+      "    db_index=True,",
+      "    editable=False,",
+      "    error_messages={",
+      "        'invalid': 'Invalid value',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank',",
+      "    }",
+      ")$0"
     ],
     "description": "Auto incrementing integer field for primary keys"
   },
   "BigAutoField": {
     "prefix": "snBigAutoField",
     "body": [
-      "models.BigAutoField(primary_key=True, unique=False)$0"
+      "models.BigAutoField(",
+      "    primary_key=True,",
+      "    unique=False,",
+      "    db_index=True,",
+      "    editable=False,",
+      "    error_messages={",
+      "        'invalid': 'Invalid value',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank',",
+      "    }",
+      ")$0"
     ],
     "description": "Auto incrementing 64-bit integer field for primary keys"
   },
   "BigIntegerField": {
     "prefix": "snBigIntegerField",
     "body": [
-      "models.BigIntegerField(unique=False, null=True, blank=True)$0"
+      "models.BigIntegerField(",
+      "    unique=False,",
+      "    null=True,",
+      "    blank=True,",
+      "    db_index=False,",
+      "    default=None,",
+      "    error_messages={",
+      "        'invalid': 'Invalid value',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank',",
+      "    }",
+      ")$0"
     ],
     "description": "Large integer field"
   },
   "BinaryField": {
     "prefix": "snBinaryField",
     "body": [
-      "models.BinaryField(max_length=None, null=True, blank=True)$0"
+      "models.BinaryField(",
+      "    max_length=None,",
+      "    null=True,",
+      "    blank=True,",
+      "    editable=True,",
+      "    db_column=None,",
+      "    error_messages={",
+      "        'invalid': 'Invalid value',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank',",
+      "    }",
+      ")$0"
     ],
     "description": "Binary field"
   },
   "BooleanField": {
     "prefix": "snBooleanField",
     "body": [
-      "models.BooleanField(default=False)$0"
+      "models.BooleanField(",
+      "    default=False,",
+      "    null=False,",
+      "    db_index=False,",
+      "    error_messages={",
+      "        'invalid': 'Invalid value',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank',",
+      "    }",
+      ")$0"
     ],
     "description": "Boolean field"
   },
@@ -42,6 +93,14 @@
       "    unique=False,",
       "    null=False,",
       "    blank=False,",
+      "    db_index=False,",
+      "    default='',",
+      "    error_messages={",
+      "        'invalid': 'Invalid value',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank',",
+      "        'max_length': 'Ensure this value has at most %(limit_value)d characters'",
+      "    }",
       ")$0"
     ],
     "description": "Character field"
@@ -54,6 +113,13 @@
       "    auto_now_add=False,",
       "    null=True,",
       "    blank=True,",
+      "    db_index=False,",
+      "    default=None,",
+      "    error_messages={",
+      "        'invalid': 'Enter a valid date',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank'",
+      "    }",
       ")$0"
     ],
     "description": "Date field"
@@ -66,6 +132,13 @@
       "    auto_now_add=False,",
       "    null=True,",
       "    blank=True,",
+      "    db_index=False,",
+      "    default=None,",
+      "    error_messages={",
+      "        'invalid': 'Enter a valid date/time',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank'",
+      "    }",
       ")$0"
     ],
     "description": "Date and time field"
@@ -78,6 +151,16 @@
       "    decimal_places=2,",
       "    null=True,",
       "    blank=True,",
+      "    db_index=False,",
+      "    default=None,",
+      "    error_messages={",
+      "        'invalid': 'Enter a valid decimal number',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank',",
+      "        'max_digits': 'Ensure that there are no more than %(max)s digits in total',",
+      "        'max_decimal_places': 'Ensure that there are no more than %(max)s decimal places',",
+      "        'max_whole_digits': 'Ensure that there are no more than %(max)s digits before the decimal point'",
+      "    }",
       ")$0"
     ],
     "description": "Decimal field with precision"
@@ -85,7 +168,17 @@
   "DurationField": {
     "prefix": "snDurationField",
     "body": [
-      "models.DurationField(null=True, blank=True)$0"
+      "models.DurationField(",
+      "    null=True,",
+      "    blank=True,",
+      "    db_index=False,",
+      "    default=None,",
+      "    error_messages={",
+      "        'invalid': 'Enter a valid duration',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank',",
+      "    }",
+      ")$0"
     ],
     "description": "Field for storing durations"
   },
@@ -97,6 +190,13 @@
       "    unique=True,",
       "    null=False,",
       "    blank=False,",
+      "    db_index=True,",
+      "    default='',",
+      "    error_messages={",
+      "        'invalid': 'Enter a valid email address',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank'",
+      "    }",
       ")$0"
     ],
     "description": "Email field"
@@ -109,6 +209,17 @@
       "    max_length=100,",
       "    null=True,",
       "    blank=True,",
+      "    storage=None,",
+      "    db_index=False,",
+      "    default=None,",
+      "    error_messages={",
+      "        'invalid': 'No file was submitted',",
+      "        'missing': 'No file was submitted',",
+      "        'empty': 'The submitted file is empty',",
+      "        'max_length': 'Ensure this filename has at most %(max)d characters',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank'",
+      "    }",
       ")$0"
     ],
     "description": "File field"
@@ -125,6 +236,14 @@
       "    max_length=100,",
       "    blank=True,",
       "    null=True,",
+      "    db_index=False,",
+      "    default=None,",
+      "    error_messages={",
+      "        'invalid': 'Enter a valid path',",
+      "        'invalid_choice': '%(value)s is not one of the available choices',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank'",
+      "    }",
       ")$0"
     ],
     "description": "File path field"
@@ -132,7 +251,18 @@
   "FloatField": {
     "prefix": "snFloatField",
     "body": [
-      "models.FloatField(null=True, blank=True)$0"
+      "models.FloatField(",
+      "    unique=False,",
+      "    null=True,",
+      "    blank=True,",
+      "    db_index=False,",
+      "    default=None,",
+      "    error_messages={",
+      "        'invalid': 'Enter a valid float',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank'",
+      "    }",
+      ")$0"
     ],
     "description": "Float field"
   },
@@ -146,6 +276,18 @@
       "    max_length=100,",
       "    null=True,",
       "    blank=True,",
+      "    storage=None,",
+      "    db_index=False,",
+      "    default=None,",
+      "    error_messages={",
+      "        'invalid': 'Invalid image file',",
+      "        'invalid_image': 'Upload a valid image. The file you uploaded was either not an image or a corrupted image',",
+      "        'missing': 'No file was submitted',",
+      "        'empty': 'The submitted file is empty',",
+      "        'max_length': 'Ensure this filename has at most %(max)d characters',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank'",
+      "    }",
       ")$0"
     ],
     "description": "Image field with optional height and width fields"
@@ -153,7 +295,18 @@
   "IntegerField": {
     "prefix": "snIntegerField",
     "body": [
-      "models.IntegerField(unique=False, null=True, blank=True)$0"
+      "models.IntegerField(",
+      "    unique=False,",
+      "    null=True,",
+      "    blank=False,",
+      "    db_index=False,",
+      "    default=None,",
+      "    error_messages={",
+      "        'invalid': 'Enter a valid integer',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank',",
+      "    }",
+      ")$0"
     ],
     "description": "Integer field"
   },
@@ -165,6 +318,13 @@
       "    unpack_ipv4=False,",
       "    null=True,",
       "    blank=True,",
+      "    db_index=False,",
+      "    default=None,",
+      "    error_messages={",
+      "        'invalid': 'Enter a valid IPv4 or IPv6 address',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank'",
+      "    }",
       ")$0"
     ],
     "description": "IP address field"
@@ -177,6 +337,13 @@
       "    decoder=None,",
       "    null=True,",
       "    blank=True,",
+      "    db_index=False,",
+      "    default=dict,",
+      "    error_messages={",
+      "        'invalid': 'Value must be valid JSON',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank'",
+      "    }",
       ")$0"
     ],
     "description": "JSON field"
@@ -184,14 +351,36 @@
   "PositiveIntegerField": {
     "prefix": "snPositiveIntegerField",
     "body": [
-      "models.PositiveIntegerField(unique=False, null=True, blank=True)$0"
+      "models.PositiveIntegerField(",
+      "    unique=False,",
+      "    null=True,",
+      "    blank=False,",
+      "    db_index=False,",
+      "    default=None,",
+      "    error_messages={",
+      "        'invalid': 'Enter a positive number',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank',",
+      "    }",
+      ")$0"
     ],
     "description": "Positive integer field"
   },
   "PositiveSmallIntegerField": {
     "prefix": "snPositiveSmallIntegerField",
     "body": [
-      "models.PositiveSmallIntegerField(unique=False, null=True, blank=True)$0"
+      "models.PositiveSmallIntegerField(",
+      "    unique=False,",
+      "    null=True,",
+      "    blank=True,",
+      "    db_index=False,",
+      "    default=None,",
+      "    error_messages={",
+      "        'invalid': 'Enter a positive number',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank',",
+      "    }",
+      ")$0"
     ],
     "description": "Positive small integer field"
   },
@@ -203,6 +392,14 @@
       "    unique=False,",
       "    null=True,",
       "    blank=True,",
+      "    allow_unicode=False,",
+      "    db_index=True,",
+      "    default='',",
+      "    error_messages={",
+      "        'invalid': 'Enter a valid \"slug\" consisting of letters, numbers, underscores or hyphens',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank'",
+      "    }",
       ")$0"
     ],
     "description": "Slug field"
@@ -210,14 +407,35 @@
   "SmallIntegerField": {
     "prefix": "snSmallIntegerField",
     "body": [
-      "models.SmallIntegerField(unique=False, null=True, blank=True)$0"
+      "models.SmallIntegerField(",
+      "    unique=False,",
+      "    null=True,",
+      "    blank=True,",
+      "    db_index=False,",
+      "    default=None,",
+      "    error_messages={",
+      "        'invalid': 'Enter a valid number',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank',",
+      "    }",
+      ")$0"
     ],
     "description": "Small integer field"
   },
   "TextField": {
     "prefix": "snTextField",
     "body": [
-      "models.TextField(null=True, blank=True)$0"
+      "models.TextField(",
+      "    null=True,",
+      "    blank=True,",
+      "    db_index=False,",
+      "    default='',",
+      "    error_messages={",
+      "        'invalid': 'Enter a valid value',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank',",
+      "    }",
+      ")$0"
     ],
     "description": "Text field"
   },
@@ -229,6 +447,13 @@
       "    auto_now_add=False,",
       "    null=True,",
       "    blank=True,",
+      "    db_index=False,",
+      "    default=None,",
+      "    error_messages={",
+      "        'invalid': 'Enter a valid time',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank'",
+      "    }",
       ")$0"
     ],
     "description": "Time field"
@@ -236,7 +461,18 @@
   "URLField": {
     "prefix": "snURLField",
     "body": [
-      "models.URLField(max_length=200, null=True, blank=True)$0"
+      "models.URLField(",
+      "    max_length=200,",
+      "    null=True,",
+      "    blank=True,",
+      "    db_index=False,",
+      "    default='',",
+      "    error_messages={",
+      "        'invalid': 'Enter a valid URL',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank',",
+      "    }",
+      ")$0"
     ],
     "description": "URL field"
   },
@@ -245,9 +481,15 @@
     "body": [
       "models.UUIDField(",
       "    primary_key=False,",
-      "    default=None,",
+      "    default=uuid.uuid4,",
       "    editable=True,",
       "    unique=False,",
+      "    db_index=False,",
+      "    error_messages={",
+      "        'invalid': 'Enter a valid UUID',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank'",
+      "    }",
       ")$0"
     ],
     "description": "UUID field"
@@ -260,8 +502,20 @@
       "    on_delete=models.CASCADE,",
       "    primary_key=False,",
       "    related_name='+',",
+      "    related_query_name=None,",
+      "    limit_choices_to={},",
+      "    parent_link=False,",
       "    null=False,",
       "    blank=False,",
+      "    db_index=True,",
+      "    db_constraint=True,",
+      "    error_messages={",
+      "        'invalid': 'Invalid value',",
+      "        'invalid_choice': '%(value)s is not one of the available choices',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank',",
+      "        'does_not_exist': '%(model)s instance with pk %(pk)r does not exist'",
+      "    }",
       ")$0"
     ],
     "description": "Foreign key to another model"
@@ -274,8 +528,20 @@
       "    on_delete=models.CASCADE,",
       "    primary_key=False,",
       "    related_name='+',",
+      "    related_query_name=None,",
+      "    limit_choices_to={},",
+      "    parent_link=False,",
       "    null=False,",
       "    blank=False,",
+      "    db_index=True,",
+      "    db_constraint=True,",
+      "    error_messages={",
+      "        'invalid': 'Invalid value',",
+      "        'invalid_choice': '%(value)s is not one of the available choices',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank',",
+      "        'does_not_exist': '%(model)s instance with pk %(pk)r does not exist'",
+      "    }",
       ")$0"
     ],
     "description": "One-to-one relationship with another model"
@@ -286,7 +552,22 @@
       "models.ManyToManyField(",
       "    User,",
       "    related_name='+',",
+      "    related_query_name=None,",
+      "    limit_choices_to={},",
+      "    symmetrical=None,",
+      "    through=None,",
+      "    through_fields=None,",
+      "    db_table=None,",
+      "    db_constraint=True,",
+      "    swappable=True,",
       "    blank=False,",
+      "    error_messages={",
+      "        'invalid': 'Invalid pk value',",
+      "        'invalid_choice': '%(value)s is not one of the available choices',",
+      "        'invalid_pk_value': '%(pk)r is not a valid value',",
+      "        'null': 'This field cannot be null',",
+      "        'blank': 'This field cannot be blank'",
+      "    }",
       ")$0"
     ],
     "description": "Many-to-many relationship with another model"
@@ -317,12 +598,6 @@
       "        verbose_name_plural = '${1:ModelNames}s'",
       "        ordering = ['-${3:field_name}']",
       "        unique_together = (('${9:field_1}', '${10:field_2}'),)",
-      "        constraints = [",
-      "            # models.UniqueConstraint(",
-      "            #     fields=['${9:field_1}', '${10:field_2}'],",
-      "            #     name='unique_${1:ModelName}_fields'",
-      "            # )",
-      "        ]",
       "",
       "    def __str__(self):",
       "        return self.${3:field_name}",
@@ -353,12 +628,6 @@
       "        verbose_name_plural = '${1:ModelNames}s'",
       "        ordering = ['-${3:field_name}']",
       "        unique_together = (('${9:field_1}', '${10:field_2}'),)",
-      "        constraints = [",
-      "            # models.UniqueConstraint(",
-      "            #     fields=['${9:field_1}', '${10:field_2}'],",
-      "            #     name='unique_${1:ModelName}_fields'",
-      "            # )",
-      "        ]",
       "",
       "    def __str__(self):",
       "        return self.${3:field_name}",
@@ -381,6 +650,7 @@
       "        fields = ['id', '${2:custom_field}']",
       "        exclude = []",
       "        read_only_fields = ['id']",
+      "        write_only_fields = []",
       "        extra_kwargs = {",
       "            'id': {",
       "                'read_only': True",
@@ -405,6 +675,7 @@
       "        fields = ['id', '${2:custom_field}']",
       "        exclude = []",
       "        read_only_fields = ['id']",
+      "        write_only_fields = []",
       "        extra_kwargs = {",
       "            'id': {",
       "                'read_only': True",
@@ -571,13 +842,9 @@
       "        \"\"\"DELETE method not supported.\"\"\"",
       "        return Response.method_not_allowed('delete')",
       "",
-      "    def head(self, request, *args, **kwargs) -> Response.type:",
-      "        \"\"\"HEAD method not supported.\"\"\"",
-      "        return Response.method_not_allowed('head')",
-      "",
       "    def options(self, request, *args, **kwargs) -> Response.type:",
       "        \"\"\"OPTIONS method not supported.\"\"\"",
-      "        return Response.method_not_allowed('options')",
+      "        return Response.options(['GET', 'POST'])",
       ""
     ],
     "description": "DRF API list view with imports and CRUD handlers"
@@ -666,13 +933,9 @@
       "        \"\"\"DELETE method not supported.\"\"\"",
       "        return Response.method_not_allowed('delete')",
       "",
-      "    def head(self, request, *args, **kwargs) -> Response.type:",
-      "        \"\"\"HEAD method not supported.\"\"\"",
-      "        return Response.method_not_allowed('head')",
-      "",
       "    def options(self, request, *args, **kwargs) -> Response.type:",
       "        \"\"\"OPTIONS method not supported.\"\"\"",
-      "        return Response.method_not_allowed('options')",
+      "        return Response.options(['GET', 'POST'])",
       ""
     ],
     "description": "DRF API list view without imports and CRUD handlers"
@@ -821,13 +1084,9 @@
       "            }",
       "        }, status.HTTP_204_NO_CONTENT)",
       "",
-      "    def head(self, request, *args, **kwargs) -> Response.type:",
-      "        \"\"\"HEAD method not supported.\"\"\"",
-      "        return Response.method_not_allowed('head')",
-      "",
       "    def options(self, request, *args, **kwargs) -> Response.type:",
       "        \"\"\"OPTIONS method not supported.\"\"\"",
-      "        return Response.method_not_allowed('options')",
+      "        return Response.options(['GET', 'PUT', 'PATCH', 'DELETE'])",
       ""
     ],
     "description": "DRF API view for CRUD operations on single model records"
