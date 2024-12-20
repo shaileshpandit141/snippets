@@ -8,6 +8,9 @@
 // 2. Run `zed: open default settings`
 {
   // AI assistant configuration
+  "features": {
+    "inline_completion_provider": "copilot"
+  },
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
@@ -45,20 +48,7 @@
     "coloring": "indent_aware"
   },
   // File handling and exclusions
-  "file_scan_exclusions": [
-    "**/.git",
-    "**/.svn",
-    "**/.hg",
-    "**/.jj",
-    "**/CVS",
-    "**/.DS_Store",
-    "**/Thumbs.db",
-    "**/.classpath",
-    "**/.settings",
-    "**/node_modules/**",
-    "**/dist/**",
-    "**/build/**"
-  ],
+  "file_scan_exclusions": [],
   // Code formatting settings
   "formatter": "language_server",
   "format_on_save": "on",
