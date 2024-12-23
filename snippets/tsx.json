@@ -1,6 +1,6 @@
 {
   "Default tsx component for React": {
-    "prefix": "snrfce",
+    "prefix": "snRfce",
     "body": [
       "import React from 'react';",
       "import './${0:Name}.css';",
@@ -15,5 +15,39 @@
       ""
     ],
     "description": "Creates a default tsx component for React"
+  },
+  "React event handler": {
+    "prefix": "snReh",
+    "body": [
+      "const handle${1:Event} = (event: React.${2:MouseEvent}<HTML${3:DivElement}>) => {",
+      "  ${0}",
+      "};"
+    ],
+    "description": "Creates a React event handler function"
+  },
+  "React useState hook": {
+    "prefix": "snRsh",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState<${2:type}>(${3:initialValue});"
+    ],
+    "description": "Creates a React useState hook"
+  },
+  "React useEffect hook": {
+    "prefix": "snReh",
+    "body": [
+      "useEffect(() => {",
+      "  ${1}",
+      "}, [${2}]);"
+    ],
+    "description": "Creates a React useEffect hook"
+  },
+  "React useCallback hook": {
+    "prefix": "snRch",
+    "body": [
+      "const ${1:callback} = useCallback((${2:params}) => {",
+      "  ${3}",
+      "}, [${4}]);"
+    ],
+    "description": "Creates a React useCallback hook"
   }
 }
