@@ -2,16 +2,16 @@
   "Default tsx component for React": {
     "prefix": "snrfce",
     "body": [
-      "import React from 'react'",
-      "import './${0:ComponentName}.css'",
+      "import React from 'react';",
+      "import './${0:Name}.css';",
       "",
-      "const ${0:ComponentName}: React.FC = (props) => {",
+      "const ${0:Name}: React.FC = (props) => {",
       "  return (",
-      "    <div>${0:ComponentName}</div>",
+      "    <div>${0:Name}</div>",
       "  )",
       "}",
       "",
-      "export default ${0:ComponentName}",
+      "export default ${0:Name};",
       ""
     ],
     "description": "Creates a default tsx component for React"

@@ -60,7 +60,7 @@
         "python.analysis": {
           "diagnosticMode": "workspace",
           // "typeCheckingMode": "strict",
-          "typeCheckingMode": "basic",
+          "typeCheckingMode": "standard",
           "useLibraryCodeForTypes": true,
           "autoImportCompletions": true,
           "reportMissingImports": true,
