@@ -1,0 +1,132 @@
+{
+  "Django Template Block": {
+    "prefix": "djblock",
+    "body": [
+      "{% block ${1:block_name} %}",
+      "    $2",
+      "{% endblock ${1:block_name} %}"
+    ],
+    "description": "Django Template Block"
+  },
+  "Django Extends Template": {
+    "prefix": "djextends",
+    "body": [
+      "{% extends '${1:base.html}' %}"
+    ],
+    "description": "Django Extends Template"
+  },
+  "Django Include Template": {
+    "prefix": "djinclude",
+    "body": [
+      "{% include '${1:template.html}' %}"
+    ],
+    "description": "Django Include Template"
+  },
+  "Django For Loop": {
+    "prefix": "djfor",
+    "body": [
+      "{% for ${1:item} in ${2:list} %}",
+      "    $3",
+      "{% empty %}",
+      "    <p>No items found.</p>",
+      "{% endfor %}"
+    ],
+    "description": "Django For Loop"
+  },
+  "Django If Condition": {
+    "prefix": "djif",
+    "body": [
+      "{% if ${1:condition} %}",
+      "    $2",
+      "{% endif %}"
+    ],
+    "description": "Django If Condition"
+  },
+  "Django If-Else Condition": {
+    "prefix": "djifelse",
+    "body": [
+      "{% if ${1:condition} %}",
+      "    $2",
+      "{% else %}",
+      "    $3",
+      "{% endif %}"
+    ],
+    "description": "Django If-Else Condition"
+  },
+  "Django Single Line Comment": {
+    "prefix": "djsinglelinecomment",
+    "body": [
+      "{# ${1:Single line comment} #}"
+    ],
+    "description": "Django Single Line Comment"
+  },
+  "Django Multi Line Comment": {
+    "prefix": "djmultilinecomment",
+    "body": [
+      "{% comment %}",
+      "${1:Multi line comment}",
+      "{% endcomment %}"
+    ],
+    "description": "Django Multi Line Comment"
+  },
+  "Django Variable": {
+    "prefix": "djvar",
+    "body": [
+      "{{ ${1:variable}|${2:default_if_none:''} }}"
+    ],
+    "description": "Django Variable with Default Filter"
+  },
+  "Django URL Template Tag": {
+    "prefix": "djurl",
+    "body": [
+      "{% url '${1:view_name}' ${2:arg1} ${3:arg2} %}"
+    ],
+    "description": "Django URL Template Tag"
+  },
+  "Django CSRF Token": {
+    "prefix": "djcsrf",
+    "body": [
+      "{% csrf_token %}"
+    ],
+    "description": "Django CSRF Token"
+  },
+  "Django Static File": {
+    "prefix": "djlinkcss",
+    "body": [
+      "{% load static %}",
+      "<link rel=\"stylesheet\" type=\"text/css\" href=\"{% static 'css/${1:style}.css' %}\">"
+    ],
+    "description": "Django Static File Inclusion"
+  },
+  "Django Static JS File": {
+    "prefix": "djlinkscript",
+    "body": [
+      "{% load static %}",
+      "<script type=\"text/javascript\" src=\"{% static 'js/${1:script}.js' %}\"></script>"
+    ],
+    "description": "Django Static JavaScript File Inclusion"
+  },
+  "Django Load Static": {
+    "prefix": "djloadstatic",
+    "body": [
+      "{% load static %}"
+    ],
+    "description": "Django Load Static Tag"
+  },
+  "Django With Block": {
+    "prefix": "djwith",
+    "body": [
+      "{% with ${1:var}=${2:value} %}",
+      "    $3",
+      "{% endwith %}"
+    ],
+    "description": "Django With Block"
+  },
+  "Django Form Field": {
+    "prefix": "djformfield",
+    "body": [
+      "{{ form.${1:field_name}|as_crispy_field }}"
+    ],
+    "description": "Django Form Field with Crispy Filter"
+  }
+}

@@ -585,7 +585,7 @@
       "    '''",
       "    ${2:Type your 'model documentation' here.}",
       "    '''",
-      "    ${3:field_name}: models.CharField = models.CharField(",
+      "    ${3:field_name} = models.CharField(",
       "        max_length=${5:255},",
       "        unique=${6:False},",
       "        null=${7:True},",

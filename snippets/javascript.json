@@ -1,45 +1,129 @@
 {
   "Log to the console": {
-    "prefix": "snclg",
+    "prefix": "clg",
     "body": [
-      "console.log($1)$0"
+      "console.log($1);$0"
     ],
     "description": "Log to the console"
   },
   "Log warning to console": {
-    "prefix": "snwarn",
+    "prefix": "clw",
     "body": [
-      "console.warn($1)$0"
+      "console.warn($1);$0"
     ],
     "description": "Log warning to the console"
   },
   "Log error to console": {
-    "prefix": "snerror",
+    "prefix": "cle",
     "body": [
-      "console.error($1)$0"
+      "console.error($1);$0"
     ],
     "description": "Log error to the console"
   },
   "Throw Exception": {
-    "prefix": "sntew",
+    "prefix": "tew",
     "body": [
-      "throw new Error(\"$1\")$0"
+      "throw new Error(\"$1\");$0"
     ],
     "description": "Throw Exception"
   },
   "Default jsx component for React": {
-    "prefix": "snrfc",
+    "prefix": "rfc",
     "body": [
-      "import React from 'react'",
-      "import './${0:ComponentName}.css'",
+      "import React from \"react\";",
+      "import \"./${0:ComponentName}.css\";",
       "",
       "export default function ${0:ComponentName}(props) {",
       "  return (",
       "    <div>${0:ComponentName}</div>",
-      "  )",
+      "  );",
       "}",
       ""
     ],
     "description": "Creates a default JSX component for React"
+  },
+  "Get Element By ID": {
+    "prefix": "getelementbyid",
+    "body": [
+      "document.getElementById(\"$1\");$0"
+    ],
+    "description": "Get element by ID"
+  },
+  "Query Selector": {
+    "prefix": "queryselector",
+    "body": [
+      "document.querySelector(\"$1\");$0"
+    ],
+    "description": "Query selector"
+  },
+  "Query Selector All": {
+    "prefix": "queryselectorall",
+    "body": [
+      "document.querySelectorAll(\"$1\");$0"
+    ],
+    "description": "Query selector all"
+  },
+  "Add Event Listener": {
+    "prefix": "addeventlistener",
+    "body": [
+      "${1:element}.addEventListener(\"${2:click}\", (event) => {",
+      "  $3",
+      "});$0"
+    ],
+    "description": "Add event listener"
+  },
+  "JavaScript event handler": {
+    "prefix": "eventhandler",
+    "body": [
+      "const handle${1:Event} = (event) => {",
+      "  ${2}",
+      "};",
+      "",
+      "${3:element}.addEventListener(\"${4:click}\", handle${1:Event});"
+    ],
+    "description": "Creates an event handler function and adds addEventListener"
+  },
+  "Create Element": {
+    "prefix": "createelement",
+    "body": [
+      "document.createElement(\"$1\");$0"
+    ],
+    "description": "Create element using javascript"
+  },
+  "Function Declaration": {
+    "prefix": "fun",
+    "body": [
+      "function ${1:functionName}(${2:params}) {",
+      "  ${3}",
+      "};$0"
+    ],
+    "description": "Create a function declaration"
+  },
+  "Arrow Function": {
+    "prefix": "arrowfun",
+    "body": [
+      "const ${1:functionName} = (${2:params}) => {",
+      "  ${3}",
+      "};$0"
+    ],
+    "description": "Create an arrow function"
+  },
+  "Async Function": {
+    "prefix": "asyncfun",
+    "body": [
+      "async function ${1:functionName}(${2:params}) {",
+      "  ${3}",
+      "};$0"
+    ],
+    "description": "Create an async function"
+  },
+  "Async Arrow Function": {
+    "prefix": "asyncarrowfun",
+    "body": [
+      "const ${1:functionName} = async (${2:params}) => {",
+      "  ${3}",
+      "};$0"
+    ],
+    "description": "Create an async arrow function"
   }
 }

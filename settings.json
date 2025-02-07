@@ -23,7 +23,7 @@
     "dock": "right"
   },
   "ui_font_size": 16,
-  "buffer_font_size": 16,
+  "buffer_font_size": 15.0,
   "theme": {
     "mode": "system", // Follows system theme
     "light": "One Light", // Theme for light mode
@@ -61,15 +61,22 @@
           "diagnosticMode": "workspace",
           // "typeCheckingMode": "strict",
           "typeCheckingMode": "standard",
+          // "typeCheckingMode": "basic",
           "useLibraryCodeForTypes": true,
           "autoImportCompletions": true,
           "reportMissingImports": true,
-          "reportMissingTypeStubs": true
+          "reportMissingTypeStubs": true,
+          "completeFunctionParens": true,
+          "autoSearchPaths": true
         },
         "python": {
-          "pythonPath": "./venv/bin/python",
-          "venvPath": "./venv"
-        }
+          "pythonPath": ".venv/bin/python",
+          "venvPath": ".venv"
+        },
+        "pyright.completion.snippetSupport": true,
+        "python.analysis.completionMode": "full",
+        "python.analysis.indexing": true,
+        "python.analysis.autoImportCompletions": true
       }
     },
     "eslint": {
@@ -82,31 +89,27 @@
           }
         ],
         "format.enable": true,
-        "workingDirectory": "./frontend"
+        "workingDirectory": "frontend"
       }
     },
     "typescript-language-server": {
       "enable": true,
       "initialization_options": {
         "preferences": {
-          "importModuleSpecifier": "relative", 
-          "importModuleSpecifierEnding": "minimal",
-          "includeCompletionsForModuleExports": true,
-          "includeCompletionsWithSnippetText": true
-        },
-        "suggestions": {
-          "completeFunctionCalls": true,
-          "includeAutomaticOptionalChainCompletions": true
+          "importModuleSpecifier": "relative",
+          "importModuleSpecifierEnding": "minimal"
         },
         "format": {
           "enable": true
         }
+      },
+      "settings": {
+        "typescript.tsdk": "../node_modules/typescript/lib"
       }
     },
     "prettier": {
       "enable": true,
       "settings": {
-        "singleQuote": true,
         "semi": true,
         "trailingComma": "es5"
       }
