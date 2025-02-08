@@ -635,7 +635,7 @@
       "    list_display = (\"id\", \"${3:name}\")",
       "    list_display_links = (\"id\",)",
       "    list_filter = (\"${4:category}\",)",
-      "    readonly_fields = (\"id\",)",
+      "    # readonly_fields = (\"id\",)",
       "    ordering = (\"id\",)",
       "    search_fields = (\"${3:name}\",)"
     ],
