@@ -1,6 +1,6 @@
 {
   "Django Template Block": {
-    "prefix": "djblock",
+    "prefix": "djtemplateBlockTag",
     "body": [
       "{% block ${1:block_name} %}",
       "    $2",
@@ -9,21 +9,21 @@
     "description": "Django Template Block"
   },
   "Django Extends Template": {
-    "prefix": "djextends",
+    "prefix": "djtemplateExtendsTag",
     "body": [
       "{% extends '${1:base.html}' %}"
     ],
     "description": "Django Extends Template"
   },
   "Django Include Template": {
-    "prefix": "djinclude",
+    "prefix": "djtemplateIncludeTag",
     "body": [
       "{% include '${1:template.html}' %}"
     ],
     "description": "Django Include Template"
   },
   "Django For Loop": {
-    "prefix": "djfor",
+    "prefix": "djtemplateForLoopTag",
     "body": [
       "{% for ${1:item} in ${2:list} %}",
       "    $3",
@@ -34,7 +34,7 @@
     "description": "Django For Loop"
   },
   "Django If Condition": {
-    "prefix": "djif",
+    "prefix": "djtemplateIfTag",
     "body": [
       "{% if ${1:condition} %}",
       "    $2",
@@ -43,7 +43,7 @@
     "description": "Django If Condition"
   },
   "Django If-Else Condition": {
-    "prefix": "djifelse",
+    "prefix": "djtemplateIfElseTag",
     "body": [
       "{% if ${1:condition} %}",
       "    $2",
@@ -54,14 +54,14 @@
     "description": "Django If-Else Condition"
   },
   "Django Single Line Comment": {
-    "prefix": "djsinglelinecomment",
+    "prefix": "djtemplatesInlineCommentTag",
     "body": [
       "{# ${1:Single line comment} #}"
     ],
     "description": "Django Single Line Comment"
   },
   "Django Multi Line Comment": {
-    "prefix": "djmultilinecomment",
+    "prefix": "djtemplateMultiLineCommentTag",
     "body": [
       "{% comment %}",
       "${1:Multi line comment}",
@@ -70,51 +70,49 @@
     "description": "Django Multi Line Comment"
   },
   "Django Variable": {
-    "prefix": "djvar",
+    "prefix": "djtemplateVariableFilter",
     "body": [
       "{{ ${1:variable}|${2:default_if_none:''} }}"
     ],
     "description": "Django Variable with Default Filter"
   },
   "Django URL Template Tag": {
-    "prefix": "djurl",
+    "prefix": "djtemplateUrlTag",
     "body": [
       "{% url '${1:view_name}' ${2:arg1} ${3:arg2} %}"
     ],
     "description": "Django URL Template Tag"
   },
   "Django CSRF Token": {
-    "prefix": "djcsrf",
+    "prefix": "djtemplateCsrfTag",
     "body": [
       "{% csrf_token %}"
     ],
     "description": "Django CSRF Token"
   },
   "Django Static File": {
-    "prefix": "djlinkcss",
+    "prefix": "djtemplateLinkCssFile",
     "body": [
-      "{% load static %}",
       "<link rel=\"stylesheet\" type=\"text/css\" href=\"{% static 'css/${1:style}.css' %}\">"
     ],
     "description": "Django Static File Inclusion"
   },
   "Django Static JS File": {
-    "prefix": "djlinkscript",
+    "prefix": "djtemplateLinkScriptFile",
     "body": [
-      "{% load static %}",
       "<script type=\"text/javascript\" src=\"{% static 'js/${1:script}.js' %}\"></script>"
     ],
     "description": "Django Static JavaScript File Inclusion"
   },
   "Django Load Static": {
-    "prefix": "djloadstatic",
+    "prefix": "djtemplateLoadStaticTag",
     "body": [
       "{% load static %}"
     ],
     "description": "Django Load Static Tag"
   },
   "Django With Block": {
-    "prefix": "djwith",
+    "prefix": "djtemplateWithTag",
     "body": [
       "{% with ${1:var}=${2:value} %}",
       "    $3",
@@ -123,7 +121,7 @@
     "description": "Django With Block"
   },
   "Django Form Field": {
-    "prefix": "djformfield",
+    "prefix": "djtemplateFormFieldFilter",
     "body": [
       "{{ form.${1:field_name}|as_crispy_field }}"
     ],
