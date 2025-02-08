@@ -25,15 +25,15 @@
   "ui_font_size": 16,
   "buffer_font_size": 15.0,
   "theme": {
-    "mode": "system", // Follows system theme
-    "light": "One Light", // Theme for light mode
-    "dark": "Summercamp" // Theme for dark mode
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Summercamp"
   },
   // Application behavior
   "auto_update": true,
   "telemetry": {
-    "diagnostics": true, // Send diagnostic data
-    "metrics": true // Send usage metrics
+    "diagnostics": true,
+    "metrics": true
   },
   "autosave": {
     "after_delay": {
@@ -42,14 +42,12 @@
   },
   // Editor configuration
   "base_keymap": "VSCode",
-  // Indent guides configuration
   "indent_guides": {
     "enabled": true,
     "coloring": "indent_aware"
   },
-  // File handling and exclusions
+  // Controll the display files and directory in dock
   "file_scan_exclusions": [],
-  // Code formatting settings
   "formatter": "language_server",
   "format_on_save": "on",
   // Language Server Protocol configurations
@@ -106,13 +104,6 @@
       "settings": {
         "typescript.tsdk": "../node_modules/typescript/lib"
       }
-    },
-    "prettier": {
-      "enable": true,
-      "settings": {
-        "semi": true,
-        "trailingComma": "es5"
-      }
     }
   },
   // Terminal settings
@@ -124,8 +115,6 @@
     "detect_venv": {
       "on": {
         "directories": [
-          ".env",
-          "env",
           ".venv",
           "venv"
         ],
@@ -134,7 +123,6 @@
     },
     "env": {},
     "font_size": 16,
-    // "font_family": null,
     "font_features": null,
     "line_height": "comfortable",
     "option_as_meta": false,
