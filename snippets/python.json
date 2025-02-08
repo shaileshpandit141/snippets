@@ -633,9 +633,9 @@
       "@admin.register(${2:ModelName})",
       "class ${2:ModelName}Admin(admin.ModelAdmin):",
       "    list_display = (\"id\", \"${3:name}\")",
-      "    list_display_links = (\"${2:name}\",)",
+      "    list_display_links = (\"id\",)",
       "    list_filter = (\"${4:category}\",)",
-      "    readonly_fields = (\"${6:created_at}\",)",
+      "    readonly_fields = (\"id\",)",
       "    ordering = (\"id\",)",
       "    search_fields = (\"${3:name}\",)"
     ],
@@ -694,7 +694,7 @@
     "description": "Django Custom Template Tag with Context"
   },
   "Django Custom Template Filter": {
-    "prefix": "djcustomTagFilter",
+    "prefix": "djcustomFilter",
     "body": [
       "from django import template",
       "",
