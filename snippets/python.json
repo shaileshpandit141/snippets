@@ -925,5 +925,135 @@
       "    return \"Task Completed\""
     ],
     "description": "Django Celery Task"
+  },
+  "Django Generic CRUD Imports": {
+    "prefix": "djviewsGenericCRUDImports",
+    "body": [
+      "from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin",
+      "from django.urls import reverse_lazy",
+      "from django.views.generic import (",
+      "    CreateView,",
+      "    DeleteView,",
+      "    DetailView,",
+      "    ListView,",
+      "    UpdateView",
+      ")",
+      "",
+      "from .models import ${1:Item}"
+    ],
+    "description": "Common Django imports for class-based views"
+  },
+  "Item List View": {
+    "prefix": "djviewsGenericLiseView",
+    "body": [
+      "class ${1:Item}ListView(LoginRequiredMixin, ListView):",
+      "    model = ${1:Item}",
+      "    context_object_name = \"${2:context_name}\"",
+      "",
+      "    def get_queryset(self):",
+      "        return self.model.objects.filter(user=self.request.user)",
+      "",
+      "    def get_template_names(self):",
+      "        return [f\"items/{self.model.__name__.lower()}_list.html\"]"
+    ],
+    "description": "List view for user's specific records"
+  },
+  "Item Detail View": {
+    "prefix": "djviewsGenericDetailView",
+    "body": [
+      "class ${1:Item}DetailView(LoginRequiredMixin, UserIsOwnerMixin, DetailView):",
+      "    model = ${1:Item}",
+      "    context_object_name = \"${2:item}\"",
+      "",
+      "    def get_context_data(self, **kwargs):",
+      "        context = super().get_context_data(**kwargs)",
+      "        context[\"${3:additional_data_key}\"] = \"${4:additional_data_value}\"",
+      "        return context",
+      "",
+      "    def get_template_names(self):",
+      "        return [f\"items/{self.model.__name__.lower()}_detail.html\"]"
+    ],
+    "description": "Detail view for retrieving a single user-owned record"
+  },
+  "Item Create View": {
+    "prefix": "djviewsGenericCreateView",
+    "body": [
+      "class ${1:Item}CreateView(LoginRequiredMixin, CreateView):",
+      "    model = ${1:Item}",
+      "    fields = \"__all__\"",
+      "",
+      "    def form_valid(self, form):",
+      "        form.instance.user = self.request.user",
+      "        return super().form_valid(form)",
+      "",
+      "    def get_success_url(self):",
+      "        return reverse_lazy(\"${2:item_list}\")",
+      "",
+      "    def get_template_names(self):",
+      "        return [f\"items/{self.model.__name__.lower()}_form.html\"]"
+    ],
+    "description": "Create view with auto-assign logged-in user"
+  },
+  "Item Update View": {
+    "prefix": "djviewsGenericUpdateView",
+    "body": [
+      "class ${1:Item}UpdateView(LoginRequiredMixin, UserIsOwnerMixin, UpdateView):",
+      "    model = ${1:Item}",
+      "    fields = \"__all__\"",
+      "",
+      "    def get_success_url(self):",
+      "        return reverse_lazy(\"${2:item_list}\")",
+      "",
+      "    def get_template_names(self):",
+      "        return [f\"items/{self.model.__name__.lower()}_form.html\"]"
+    ],
+    "description": "Update view allowing only record owner to edit"
+  },
+  "Item Delete View": {
+    "prefix": "djviewsGenericDeleteView",
+    "body": [
+      "class ${1:Item}DeleteView(LoginRequiredMixin, UserIsOwnerMixin, DeleteView):",
+      "    model = ${1:Item}",
+      "",
+      "    def get_success_url(self):",
+      "        return reverse_lazy(\"${2:item_list}\")",
+      "",
+      "    def get_template_names(self):",
+      "        return [f\"items/{self.model.__name__.lower()}_confirm_delete.html\"]"
+    ],
+    "description": "Delete view allowing only record owner to delete"
+  },
+  "User Is Owner Mixin": {
+    "prefix": "djviewsUserIsOwnerMixin",
+    "body": [
+      "class UserIsOwnerMixin(UserPassesTestMixin):",
+      "    def test_func(self):",
+      "        obj = self.get_object()",
+      "        return obj.user == self.request.user"
+    ],
+    "description": "Mixin to check if user is the owner of the object"
+  },
+  "Django URL Patterns": {
+    "prefix": "djviewsGenericCRUDUrlpatterns",
+    "body": [
+      "from django.urls import path",
+      "from .views import (",
+      "    ${1:Item}ListView,",
+      "    ${1:Item}DetailView,",
+      "    ${1:Item}CreateView,",
+      "    ${1:Item}UpdateView,",
+      "    ${1:Item}DeleteView",
+      ")",
+      "",
+      "",
+      "urlpatterns = [",
+      "    path(\"\", ${1:Item}ListView.as_view(), name=\"${2:item}_list\"),",
+      "    path(\"<int:pk>/\", ${1:Item}DetailView.as_view(), name=\"${2:item}_detail\"),",
+      "    path(\"create/\", ${1:Item}CreateView.as_view(), name=\"${2:item}_create\"),",
+      "    path(\"<int:pk>/update/\", ${1:Item}UpdateView.as_view(), name=\"${2:item}_update\"),",
+      "    path(\"<int:pk>/delete/\", ${1:Item}DeleteView.as_view(), name=\"${2:item}_delete\"),",
+      "]$0"
+    ],
+    "description": "URL patterns for Django views"
   }
 }
