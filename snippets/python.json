@@ -949,6 +949,7 @@
       "class ${1:Item}ListView(LoginRequiredMixin, ListView):",
       "    model = ${1:Item}",
       "    context_object_name = \"${2:context_name}\"",
+      "    paginate_by = 10",
       "",
       "    def get_queryset(self):",
       "        return self.model.objects.filter(user=self.request.user)",
