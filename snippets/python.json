@@ -152,26 +152,6 @@
     ],
     "description": "Character field"
   },
-  "ChoiceField": {
-    "prefix": "djmodelsChoiceField",
-    "body": [
-      "models.ChoiceField(",
-      "    choices=${1:CHOICES},",
-      "    unique=${2:False},",
-      "    null=${3:False},",
-      "    blank=${4:False},",
-      "    db_index=${5:False},",
-      "    default=${6:None},",
-      "    error_messages={",
-      "        \"invalid\": \"Invalid value\",",
-      "        \"invalid_choice\": \"Select a valid choice. That choice is not one of the available choices.\",",
-      "        \"null\": \"This field cannot be null\",",
-      "        \"blank\": \"This field cannot be blank\"",
-      "    }",
-      ")${0}"
-    ],
-    "description": "Choice field with predefined options"
-  },
   "DateField": {
     "prefix": "djmodelsDateField",
     "body": [
