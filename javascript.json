@@ -50,7 +50,7 @@
     "description": "Get element by ID"
   },
   "Query Selector": {
-    "prefix": "queryselector",
+    "prefix": "querySelector",
     "body": [
       "document.querySelector(\"$1\");$0"
     ],
@@ -91,7 +91,7 @@
     "description": "Create element using javascript"
   },
   "Function Declaration": {
-    "prefix": "fun",
+    "prefix": "function",
     "body": [
       "function ${1:functionName}(${2:params}) {",
       "  ${3}",
@@ -100,7 +100,7 @@
     "description": "Create a function declaration"
   },
   "Arrow Function": {
-    "prefix": "arrowFun",
+    "prefix": "arrowFunction",
     "body": [
       "const ${1:functionName} = (${2:params}) => {",
       "  ${3}",
@@ -109,7 +109,7 @@
     "description": "Create an arrow function"
   },
   "Async Function": {
-    "prefix": "asyncFun",
+    "prefix": "asyncFunction",
     "body": [
       "async function ${1:functionName}(${2:params}) {",
       "  ${3}",
@@ -118,7 +118,7 @@
     "description": "Create an async function"
   },
   "Async Arrow Function": {
-    "prefix": "asyncArrowFun",
+    "prefix": "asyncArrowFunction",
     "body": [
       "const ${1:functionName} = async (${2:params}) => {",
       "  ${3}",
