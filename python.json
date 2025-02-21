@@ -33,7 +33,7 @@
       "        if getattr(self, field) is None:",
       "            setattr(self, field, value)",
       "",
-      "    def save(self, *args, **kwargs):",
+      "    def save(self, *args, **kwargs) -> None:",
       "        \"\"\"Settings default values for boolean fields if user is not provide\"\"\"",
       "        default_values = {",
       "            \"${6:field_name}\": ${7:True},",
