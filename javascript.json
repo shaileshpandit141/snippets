@@ -43,7 +43,7 @@
     "description": "Creates a default JSX component for React"
   },
   "Get Element By ID": {
-    "prefix": "getelementbyid",
+    "prefix": "getElementById",
     "body": [
       "document.getElementById(\"$1\");$0"
     ],
@@ -57,14 +57,14 @@
     "description": "Query selector"
   },
   "Query Selector All": {
-    "prefix": "queryselectorall",
+    "prefix": "querySelectorAll",
     "body": [
       "document.querySelectorAll(\"$1\");$0"
     ],
     "description": "Query selector all"
   },
   "Add Event Listener": {
-    "prefix": "addeventlistener",
+    "prefix": "addEventListener",
     "body": [
       "${1:element}.addEventListener(\"${2:click}\", (event) => {",
       "  $3",
@@ -73,7 +73,7 @@
     "description": "Add event listener"
   },
   "JavaScript event handler": {
-    "prefix": "eventhandler",
+    "prefix": "eventHandler",
     "body": [
       "const handle${1:Event} = (event) => {",
       "  ${2}",
@@ -84,7 +84,7 @@
     "description": "Creates an event handler function and adds addEventListener"
   },
   "Create Element": {
-    "prefix": "createelement",
+    "prefix": "createElement",
     "body": [
       "document.createElement(\"$1\");$0"
     ],
@@ -100,7 +100,7 @@
     "description": "Create a function declaration"
   },
   "Arrow Function": {
-    "prefix": "arrowfun",
+    "prefix": "arrowFun",
     "body": [
       "const ${1:functionName} = (${2:params}) => {",
       "  ${3}",
@@ -109,7 +109,7 @@
     "description": "Create an arrow function"
   },
   "Async Function": {
-    "prefix": "asyncfun",
+    "prefix": "asyncFun",
     "body": [
       "async function ${1:functionName}(${2:params}) {",
       "  ${3}",
@@ -118,7 +118,7 @@
     "description": "Create an async function"
   },
   "Async Arrow Function": {
-    "prefix": "asyncarrowfun",
+    "prefix": "asyncArrowFun",
     "body": [
       "const ${1:functionName} = async (${2:params}) => {",
       "  ${3}",
