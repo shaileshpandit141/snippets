@@ -16,7 +16,6 @@
       "        verbose_name = \"${1:ModelName}\"",
       "        verbose_name_plural = \"${1:ModelNames}s\"",
       "        ordering = [\"-${3:id}\"]",
-      "        unique_together = ((\"${4:field_1}\", \"${5:field_2}\"),)",
       "",
       "    objects = models.Manager()",
       "",
@@ -27,21 +26,6 @@
       "    # Model fields for ${1:ModelName}",
       "    created_at = models.DateTimeField(auto_now_add=True)",
       "    updated_at = models.DateTimeField(auto_now=True)",
-      "",
-      "    def add_default_value(self, field: str, value: bool) -> None:",
-      "        \"\"\"Helper method to set default value for a field if it's None\"\"\"",
-      "        if getattr(self, field) is None:",
-      "            setattr(self, field, value)",
-      "",
-      "    def save(self, *args, **kwargs) -> None:",
-      "        \"\"\"Settings default values for boolean fields if user is not provide\"\"\"",
-      "        default_values = {",
-      "            \"${6:field_name}\": ${7:True},",
-      "        }",
-      "        for field, value in default_values.items():",
-      "            self.add_default_value(field, value)",
-      "",
-      "        super().save(*args, **kwargs)$0",
       ""
     ],
     "description": "Template for creating a Django model with Meta options"
@@ -814,22 +798,8 @@
     ],
     "description": "Django Signals (post_save)"
   },
-  "Django Pagination": {
-    "prefix": "djpaginate",
-    "body": [
-      "from django.core.paginator import Paginator",
-      "",
-      "",
-      "def paginate(request, queryset, item_per_page=10):",
-      "    paginator = Paginator(queryset, ${3:item_per_page})",
-      "    page_number = request.GET.get(\"page\")",
-      "    paginated_page_object = paginator.get_page(page_number)",
-      "    return paginated_page_object"
-    ],
-    "description": "Django Pagination"
-  },
   "Django REST Framework Model Serializer Base with imports": {
-    "prefix": "drfserializer",
+    "prefix": "drfmodelSerializer",
     "body": [
       "from rest_framework import serializers",
       "from .models import ${1:ModelName}",
