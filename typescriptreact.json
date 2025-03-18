@@ -2,10 +2,12 @@
   "Default tsx component for React": {
     "prefix": "rfce",
     "body": [
-      "import React from \"react\";",
+      "import React, { JSX } from \"react\";",
       "import \"./${0:Snippet}.css\";",
       "",
-      "const ${0:Snippet}: React.FC = (): JSX.Element => {",
+      "interface Props { }",
+      "",
+      "const ${0:Snippet}: React.FC = (props: Props): JSX.Element => {",
       "  return (",
       "    <div>${0:Snippet}</div>",
       "  )",
@@ -19,7 +21,7 @@
   "React event handler": {
     "prefix": "eventHandler",
     "body": [
-      "const handle${1:Event} = (event: React.${2:MouseEvent}<HTML${3:DivElement}>) => {",
+      "const handle${1:Event} = (event: React.${2:MouseEvent}<HTML${3:Element}>) => {",
       "  ${0}",
       "};"
     ],
@@ -34,11 +36,7 @@
   },
   "React useEffect hook": {
     "prefix": "useEffect",
-    "body": [
-      "useEffect(() => {",
-      "  ${1}",
-      "}, [${2}]);"
-    ],
+    "body": ["useEffect(() => {", "  ${1}", "}, [${2}]);"],
     "description": "Creates a React useEffect hook"
   },
   "React useCallback hook": {
