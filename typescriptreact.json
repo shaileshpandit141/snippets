@@ -2,12 +2,12 @@
   "Default tsx component for React": {
     "prefix": "rfce",
     "body": [
-      "import React, { JSX } from \"react\";",
+      "import React, { FC, JSX } from \"react\";",
       "import \"./${0:Snippet}.css\";",
       "",
-      "interface Props { }",
+      "interface ${0:Snippet}Props { }",
       "",
-      "const ${0:Snippet}: React.FC = (props: Props): JSX.Element => {",
+      "const ${0:Snippet}: FC<${0:Snippet}Props> = (props): JSX.Element => {",
       "  return (",
       "    <div>${0:Snippet}</div>",
       "  )",
