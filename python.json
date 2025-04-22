@@ -618,7 +618,7 @@
       "class ${2:ModelName}Admin(admin.ModelAdmin):",
       "    list_display = [",
       "        field.name",
-      "        for field in Repository._meta.get_fields()",
+      "        for field in ${2:ModelName}._meta.get_fields()",
       "        if not (field.many_to_many or field.one_to_many)",
       "    ]",
       "    list_display_links = list_display",
