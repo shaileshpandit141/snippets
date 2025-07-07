@@ -1,4 +1,234 @@
 {
+  "Function with Modern Type Hints and Docstring": {
+    "prefix": "pyfunction",
+    "body": [
+      "def ${1:function_name}(${2:param1}: ${3:str}, ${4:param2}: ${5:int} | None = None) -> ${6:dict}:",
+      "    \"\"\"",
+      "    [One-liner summary of what the function does.]",
+      "",
+      "    Args:",
+      "        ${2:param1} (${3:str}): [Short description].",
+      "        ${4:param2} (${5:int} | None, optional): [Short description]. Defaults to None.",
+      "        *args: Additional positional arguments.",
+      "        **kwargs: Additional keyword arguments.",
+      "",
+      "    Returns:",
+      "        ${6:dict}: [Description of return value].",
+      "",
+      "    Raises:",
+      "        ValueError: [When invalid input is provided].",
+      "",
+      "    Example:",
+      "        >>> ${1:function_name}(\"example\")",
+      "        {'result': 'ok'}",
+      "",
+      "    \"\"\"",
+      "    pass"
+    ],
+    "description": "Function with latest type hints and docstring"
+  },
+
+  "Class with Modern Docstring and Constructor": {
+    "prefix": "pyclass",
+    "body": [
+      "class ${1:MyClass}:",
+      "    \"\"\"",
+      "    [One-liner summary of what the class does.]",
+      "",
+      "    Attributes:",
+      "        ${2:name} (str): [Short description].",
+      "        ${3:age} (int | None): [Optional field description].",
+      "",
+      "    \"\"\"",
+      "",
+      "    def __init__(self, ${2:name}: str, ${3:age}: int | None = None) -> None:",
+      "        \"\"\"Initialize the class with given arguments.",
+      "",
+      "        Args:",
+      "            ${2:name} (str): [Description].",
+      "            ${3:age} (int | None): [Optional age, defaults to None].",
+      "",
+      "        \"\"\"",
+      "        self.${2:name} = ${2:name}",
+      "        self.${3:age} = ${3:age}"
+    ],
+    "description": "Class with docstring and modern type hints"
+  },
+
+  "Abstract Base Class with Latest Syntax": {
+    "prefix": "pyabstractclass",
+    "body": [
+      "from abc import ABC, abstractmethod",
+      "from typing import Self",
+      "",
+      "",
+      "class ${1:Abstract${2:Class}}(ABC):",
+      "    \"\"\"",
+      "    Abstract base class for ${2:Class}.",
+      "",
+      "    Attributes:",
+      "        ${3:name} (str): [Name of the object].",
+      "",
+      "    \"\"\"",
+      "",
+      "    def __init__(self, ${3:name}: str) -> None:",
+      "        \"\"\"Initialize the abstract class.",
+      "",
+      "        Args:",
+      "            ${3:name} (str): [Description].",
+      "        \"\"\"",
+      "",
+      "        self.${3:name} = ${3:name}",
+      "",
+      "    @abstractmethod",
+      "    def ${4:do_work}(self, ${5:data}: str) -> str:",
+      "        \"\"\"",
+      "        Abstract method to do work.",
+      "",
+      "        Args:",
+      "            ${5:data} (str): [Input data].",
+      "",
+      "        Returns:",
+      "            str: [Processed result].",
+      "",
+      "        \"\"\"",
+      "        pass",
+      "",
+      "    @property",
+      "    @abstractmethod",
+      "    def ${6:title}(self) -> str:",
+      "        \"\"\"",
+      "        Abstract property that must be implemented.",
+      "",
+      "        Returns:",
+      "            str: [Title string].",
+      "        \"\"\"",
+      "",
+      "        pass"
+    ],
+    "description": "Abstract base class with latest type hints"
+  },
+
+  "Property Method with Type Hint": {
+    "prefix": "pyproperty",
+    "body": [
+      "@property",
+      "def ${1:property_name}(self) -> ${2:str}:",
+      "    \"\"\"",
+      "    ${2:str}: [Short description of the property].",
+      "",
+      "    Returns:",
+      "        ${2:str}: [Description].",
+      "",
+      "    \"\"\"",
+      "    return self._${1:property_name}"
+    ],
+    "description": "Property with return type hint and docstring"
+  },
+
+  "Magic Method __str__ with Docstring": {
+    "prefix": "pystrdmethod",
+    "body": [
+      "def __str__(self) -> str:",
+      "    \"\"\"",
+      "    Returns string representation of the object.",
+      "",
+      "    Returns:",
+      "        str: Human-readable representation.",
+      "",
+      "    \"\"\"",
+      "    return f\"<${1:ClassName} {self.${2:name}}>\")"
+    ],
+    "description": "Magic method __str__ with modern return hint"
+  },
+
+  "Decorator Function with Docstring": {
+    "prefix": "pydecorator",
+    "body": [
+      "from collections.abc import Callable",
+      "from functools import wraps",
+      "",
+      "",
+      "def ${1:my_decorator}(func: Callable) -> Callable:",
+      "    \"\"\"",
+      "    Decorator that [adds behavior].",
+      "",
+      "    Args:",
+      "        func (Callable): The function to wrap.",
+      "",
+      "    Returns:",
+      "        Callable: Wrapped function.",
+      "",
+      "    \"\"\"",
+      "    @wraps(func)",
+      "    def wrapper(*args, **kwargs):",
+      "        return func(*args, **kwargs)",
+      "    return wrapper"
+    ],
+    "description": "Modern decorator function with full docstring"
+  },
+
+  "Module Docstring (Top of File)": {
+    "prefix": "pymodule",
+    "body": [
+      "\"\"\"",
+      "${1:module_name}.py",
+      "",
+      "",
+      "[Short description of what this module does.]",
+      "",
+      "Functions:",
+      "    - ${2:func_name}(): [Short description]",
+      "",
+      "Classes:",
+      "    - ${3:ClassName}: [Short description]",
+      "\"\"\""
+    ],
+    "description": "Python module-level docstring"
+  },
+
+  "Dataclass with Modern Docstring": {
+    "prefix": "pydataclass",
+    "body": [
+      "from dataclasses import dataclass",
+      "",
+      "",
+      "@dataclass",
+      "class ${1:Item}:",
+      "    \"\"\"",
+      "    Represents a ${1:Item}.",
+      "",
+      "    Attributes:",
+      "        ${2:name} (str): Name of the item.",
+      "        ${3:price} (float): Price of the item.",
+      "",
+      "    \"\"\"",
+      "    ${2:name}: str",
+      "    ${3:price}: float"
+    ],
+    "description": "Dataclass with latest type hints and docstring"
+  },
+
+  "NamedTuple with Modern Type Hints": {
+    "prefix": "pynamedtuple",
+    "body": [
+      "from typing import NamedTuple",
+      "",
+      "",
+      "class ${1:User}(NamedTuple):",
+      "    \"\"\"",
+      "    Represents a ${1:User} tuple.",
+      "",
+      "    Attributes:",
+      "        ${2:id} (int): User ID.",
+      "        ${3:email} (str): Email address.",
+      "",
+      "    \"\"\"",
+      "    ${2:id}: int",
+      "    ${3:email}: str"
+    ],
+    "description": "NamedTuple with docstring and modern hints"
+  },
   "Django Model Template with imports": {
     "prefix": "djmodels",
     "body": [
